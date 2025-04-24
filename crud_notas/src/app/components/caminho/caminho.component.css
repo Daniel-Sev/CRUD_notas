@@ -1,0 +1,13 @@
+#texto_normal{
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+#maiorzinho{
+    margin-left: 5px;
+    margin-right: 13px;
+}
+
+#negrito_texto{
+    font-weight: bold;
+}
