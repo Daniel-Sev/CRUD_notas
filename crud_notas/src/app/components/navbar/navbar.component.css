@@ -4,6 +4,8 @@
     margin: 0 ;
 }
 #navbar{
+    position: relative;
+    z-index: 2;
     background-color: white;
     display: flex;
     width: 99.65vw;
