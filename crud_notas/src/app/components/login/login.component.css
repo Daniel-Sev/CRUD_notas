@@ -1,0 +1,77 @@
+*{
+    font-family: sans-serif;
+}
+
+#login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin:20px 120px;
+    font-size: 14px;
+    height: 60vh;
+    #formulario{
+        width: 25vw;
+        height: 35vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        #inputs{
+            height: 50%;
+            /* border: solid burlywood 2px; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .input{
+                width: 100%;
+                height: 35%;
+                /* border-radius: 4px; */
+            }
+            .input::placeholder {
+                position: relative;
+                left: 3%;
+                transition: ease-in-out 0.2s;
+            }
+            .input:focus::placeholder{
+                opacity: 0;
+            }
+        }
+        #botoes{
+            height: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 25.27vw;
+            .botao{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 40%;
+                height: 70%;
+                border-radius: 4px;
+                border: none;
+                .icon{
+                    width: 15%;
+                }
+                transition: ease-in-out 0.2s;
+            }
+            .botao:nth-child(1){
+                background-color:#238662;
+                color: white;
+            }
+            .botao:nth-child(1):hover{
+                background-color:#155d43;
+            }
+            .botao:nth-child(2){
+                border: solid rgb(233, 233, 233) 2px;
+            }
+            .botao:nth-child(2):hover{
+                background-color:#238662;
+                color: white;
+                border:solid #238662 2px;
+                .icon{
+                    filter: saturate(100%) brightness(100);
+                }
+            }
+        }
+    }
+}
