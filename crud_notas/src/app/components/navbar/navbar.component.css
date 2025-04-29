@@ -4,6 +4,7 @@
     margin: 0 ;
 }
 #navbar{
+
     position: relative;
     z-index: 2;
     background-color: white;
@@ -37,8 +38,8 @@
         #usuario{
             border: solid rgb(203, 203, 203) 2px;
             border-radius: 20px;
-            width: 15%;
-            height: 2.5vw;
+            width: 10%;
+            height: 2vw;
             justify-content: space-between;
         }
     }
