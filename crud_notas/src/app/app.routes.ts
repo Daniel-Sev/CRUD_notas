@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { GraficosComponent } from './components/graficos/graficos.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 
+
 export const routes: Routes = [
     {
         path:"",

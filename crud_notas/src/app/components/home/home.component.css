@@ -45,7 +45,9 @@
 
 
 #gerenciamento:hover, #graficos:hover {
-    color: white;
+    a{
+        color: white;
+    }
     background-color: #199a6a; 
     cursor: pointer; 
 }
@@ -72,6 +74,8 @@
 }
 
 .texto_home {
+    text-decoration: none;
+    color: black;
     font-size: 19px;
     line-height: 25px;
     letter-spacing: -3%;
