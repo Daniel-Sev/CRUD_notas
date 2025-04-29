@@ -1,0 +1,81 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+#cadastro {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 8.5%;
+    max-width: 500px;
+}
+
+#texto_cadastro {
+    font-size: 30px;
+}
+#texto_campos{
+    font-size: 16px;
+    margin-top: 3.5%;
+}
+
+#formulario {
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input {
+    width: 90%;
+    height: 42px;
+    padding: 8px;
+    border: 1px solid #a7a7a7;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+}
+
+
+.input::placeholder {
+    color: #888;
+    transition: 0.2s;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+}
+
+#botoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2%;
+    margin-right: 6%;
+}
+
+#botao {
+    height: 45px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #238662;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition:  0.2s ease-in-out;
+}
+
+#botao:hover {
+    background-color: #155d43;
+}
+
+.icon {
+    width: 16px;
+}
