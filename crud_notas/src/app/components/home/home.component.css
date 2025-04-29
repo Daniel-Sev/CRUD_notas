@@ -1,0 +1,79 @@
+* {
+    font-family: sans-serif;
+}
+
+#gerenciamento, #graficos {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-weight: bold;
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    box-shadow: rgba(157, 155, 155, 0.2) 0px 12px 28px 0px, 
+                rgba(235, 234, 234, 0.1) 0px 2px 4px 0px, 
+                rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+#gerenciamento {
+    height: 80px;
+    width: 250px;
+    margin-left: 8.5%;
+}
+
+#graficos {
+    height: 60px;
+    width: 240px;
+    margin-left: 5.2%;
+}
+
+#gerenciamento img, #graficos img {
+    margin-left: 8.5%;
+    margin-right: 6%;
+    height: 25px;
+    width: 20px;
+}
+
+#graficos img {
+    margin-bottom: 1%;
+}
+
+#gerenciamento img {
+    margin-bottom: 9%;
+}
+
+
+#gerenciamento:hover, #graficos:hover {
+    color: white;
+    background-color: #199a6a; 
+    cursor: pointer; 
+}
+
+#gerenciamento:hover img , #graficos:hover img {
+    filter: saturate(100%) brightness(100);
+}
+
+
+#escolhas {
+    display: flex;
+}
+
+
+
+#texto_germinare {
+    font-size: 32px;
+    line-height: 41px;
+    font-style: Inter;
+    font-weight: bold;
+    margin-left: 8.5%;
+    margin-top: 3.6%;
+    margin-bottom: 2.5%;
+}
+
+.texto_home {
+    font-size: 19px;
+    line-height: 25px;
+    letter-spacing: -3%;
+    font-weight: 600;
+}
