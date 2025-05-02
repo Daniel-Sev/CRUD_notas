@@ -1,0 +1,141 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+#cadastro {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 7%;
+    width: 100%;
+}
+
+#texto_cadastro {
+    font-size: 30px;
+}
+
+#formulario {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input {
+    width: 24%;
+    height: 45px;
+    padding: 8px;
+    border: 1px solid #a7a7a7;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input::placeholder {
+    color: #888;
+    transition: 0.2s;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+}
+
+#botoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 13%;
+    margin-right: 10%;
+}
+
+.botao:nth-child(1) {
+    height: 45px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #238662;
+    font-weight: 700;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+.botao:nth-child(2) {
+    height: 45px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #238662;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.botao:nth-child(2):hover {
+    background-color: #155d43;
+}
+
+.icon {
+    width: 16px;
+}
+
+#etapas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+    margin-right: 100px;
+}
+
+.etapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.numero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    height: 24px;
+    width: 24px;
+    font-size: 12px;
+    background-color: transparent;
+    border: 1px solid green;
+}
+
+.numero.ativo {
+    background-color: #E6E6E6;
+    border: 1px solid #E6E6E6;
+}
+
+.texto-etapa {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 21px;
+    margin-top: 6px;
+    text-align: center;
+}
+
+#linha_numeros {
+    background-color: #959595;
+    width: 156px;
+    height: 1px;
+    border: none;
+    margin-bottom: 25px;
+    margin-left: -75px;
+    margin-right: -22px;
+}
