@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+}
+#tabela{
+    display: flex;
+    flex-direction: column;
+    width: 95.7vw;
+    height: 80.7vh;
+    align-items: center;
+    justify-content: space-evenly;
+    table{
+        width: 80%;
+        tbody{
+
+            tr:nth-child(even){
+                background-color: lightgray;
+            }
+            td:nth-last-child(1){
+                text-align: center;
+            }
+        }
+    }
+    div{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+}

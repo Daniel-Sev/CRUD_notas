@@ -1,20 +1,45 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
-      <th mat-header-cell *matHeaderCellDef> {{ column | titlecase }} </th>
-      <td mat-cell *matCellDef="let element"> {{ element[column] }} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  
-    <!-- Iteração sobre as linhas de dados -->
-    <ng-container matColumnDef="data">
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </ng-container>
-  </table>
-  
-  <mat-paginator [length]="totalItems"
-                 [pageSize]="5"
-                 [pageSizeOptions]="[5]"
-                 (page)="onPageChange($event)">
-  </mat-paginator>
-  
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+]<div id="tabela">
+    <table>
+        <thead>
+          <tr id="cabecalho">
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ano</th>
+            <th>Serie</th>
+            <th>Exatas</th>
+            <th>Linguagens</th>
+            <th>Ciências</th>
+            <th>Media</th>
+            <th>Situação</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of itens_listados" class="linha">
+            <td>{{ item.nome }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.ano }}</td>
+            <td>{{ item.serie }}</td>
+            <td>{{ item.exatas }}</td>
+            <td>{{ item.linguagens }}</td>
+            <td>{{ item.ciencias }}</td>
+            <td>{{ item.media }}</td>
+            <td *ngIf="item.media >= 7; else Reprovado" style="color: rgb(2, 146, 0); background-color: lightgreen;">Aprovado</td>
+            <ng-template #Reprovado>
+                <td style="color:  red; background-color: lightsalmon;">Reprovado</td>
+            </ng-template>
+            <td>...</td>
+        </tr>
+        </tbody>
+      </table>
+      
+      <div id="paginacao">
+        <button (click)="paginaAnterior()">Anterior</button>
+        <button *ngFor="let i of total_pagina" (click)="clique()">
+            {{ i }}
+        </button>
+        <button (click)="proximaPagina()">Próxima</button>
+      </div>
+</div>
