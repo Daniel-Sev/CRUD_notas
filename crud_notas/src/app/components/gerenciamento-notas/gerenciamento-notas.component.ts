@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { retry } from 'rxjs';
-
+import { CaminhoComponent } from '../caminho/caminho.component';
+import {FormsModule} from '@angular/forms'
 @Component({
   selector: 'app-gerenciamento-notas',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, SidebarComponent],
+  imports: [CommonModule, NavbarComponent, SidebarComponent, CaminhoComponent, FormsModule],
   templateUrl: './gerenciamento-notas.component.html',
   styleUrls: ['./gerenciamento-notas.component.css']
 })
@@ -152,6 +153,7 @@ export class GerenciamentoNotasComponent {
   ];
   itens_listados: any[] = [];
   total_pagina: any[] = []
+
   constructor() {
     this.atualizarItensListados();
     this.total_pagina = this.calcularPaginas()
@@ -178,7 +180,7 @@ export class GerenciamentoNotasComponent {
       this.pagina_atual-=1;
       this.atualizarItensListados();
     }else{
-      this.proximaPagina()
+      this.navegarPara(this.total_pagina.length)
     }
   }
 
@@ -187,15 +189,26 @@ export class GerenciamentoNotasComponent {
       this.pagina_atual++;
       this.atualizarItensListados();
     }else{
-      this.paginaAnterior()
+      this.navegarPara(1)
     }
-  }
-  clique(){
-    console.log("é.....")
   }
   navegarPara(pagina: number){
     this.pagina_atual = pagina
     console.log("Deu certo")
     this.atualizarItensListados()
   }
+  nome_entrada :string = ""
+  pesquisar(){
+    
+    for(let i of this.itens){
+      if(this.nome_entrada == i.nome.toString()){
+          console.log("Deu certo!")
+          this.itens_listados = [
+            i
+          ]
+          break;
+      }
+    }
+  }
+
 }

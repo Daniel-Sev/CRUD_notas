@@ -5,6 +5,7 @@ import { GraficosComponent } from './components/graficos/graficos.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { CadastroAlunoComponent } from './components/cadastro-aluno/cadastro-aluno.component';
 import { LinguagensComponent } from './components/linguagens/linguagens.component';
+import { GerenciamentoNotasComponent } from './components/gerenciamento-notas/gerenciamento-notas.component';
 
 
 export const routes: Routes = [
@@ -27,6 +28,10 @@ export const routes: Routes = [
     {
         path:"cadastro-aluno",
         component: CadastroAlunoComponent
+    },
+    {
+        path:"gerenciamento",
+        component: GerenciamentoNotasComponent
     },
     {
         path:"linguagens",

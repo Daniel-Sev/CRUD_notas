@@ -5,11 +5,12 @@ import { CaminhoComponent } from '../caminho/caminho.component';
 import { PopUpLoginComponent } from '../pop-up-login/pop-up-login.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [NavbarComponent, SidebarComponent, CaminhoComponent, CommonModule],
+  imports: [NavbarComponent, SidebarComponent, CaminhoComponent, CommonModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

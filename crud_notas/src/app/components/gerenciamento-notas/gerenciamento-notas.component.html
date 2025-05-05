@@ -1,6 +1,20 @@
 <app-navbar></app-navbar>
 <app-sidebar></app-sidebar>
-]<div id="tabela">
+<app-caminho></app-caminho>
+
+<div id="corpo">
+  <h1 id="titulo">Gerenciamento de Notas</h1>
+  <div id="pesquisa">
+    <div id="primeira_parte">
+      <div id="simbolo"> <img src="assets/search.svg" alt=""></div>
+      <input type="text" placeholder="Busque por nome" [(ngModel)]="nome_entrada">
+    </div>
+    <div id="botoes">
+      <button type="submit" (click)="pesquisar()"><img src="">pesquisar</button>
+    <button><img src="assets/Share.svg" alt="">cadastrar alunos</button>
+    </div>
+  </div>
+<div id="tabela">
     <table>
         <thead>
           <tr id="cabecalho">
@@ -30,16 +44,24 @@
             <ng-template #Reprovado>
                 <td style="color:  red; background-color: lightsalmon;">Reprovado</td>
             </ng-template>
-            <td>...</td>
+            <td>&#8942;
+            </td>
         </tr>
         </tbody>
-      </table>
+      </table>  
       
       <div id="paginacao">
-        <button (click)="paginaAnterior()">Anterior</button>
-        <button *ngFor="let i of total_pagina" (click)="clique()">
-            {{ i }}
+        <button (click)="paginaAnterior()"><p>&lt;</p></button>
+      
+        <button *ngFor="let i of total_pagina"
+                (click)="navegarPara(i)"
+                [ngStyle]="{ 'background-color': i === pagina_atual ? '#3abe8ee4' : 'transparent' }"
+        >
+          {{ i }}
         </button>
-        <button (click)="proximaPagina()">Próxima</button>
+      
+        <button (click)="proximaPagina()"><p>&gt;</p></button>
       </div>
+      
+</div>
 </div>
