@@ -7,6 +7,7 @@
     display: flex;
     align-self: flex-start;
     margin-left: 8.8% ;
+    font-weight: 550;
 }
 #primeira_parte{
     width: 80%;
@@ -17,7 +18,7 @@
     justify-content: center;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    background-color: lightgrey;
+    background-color: rgb(235, 235, 235) ;
     width: 4%;
     height: 80%;
     img{
@@ -25,7 +26,7 @@
     }
 }
 #pesquisa{
-    width: 75vw;
+    width: 82vw;
     height: 7%;
     display: flex;
     justify-content: space-between;
@@ -35,7 +36,7 @@
             border: none;
             border-top-right-radius: 4px;
             border-bottom-right-radius: 4px ;
-            background-color:lightgray;
+            background-color:rgb(235, 235, 235);
             width: 50%;
             height: 80%;
         }
@@ -80,8 +81,9 @@
     }
 }
 #corpo{
-    height: 80vh;
-    justify-content: space-around;
+    margin-top: 2%;
+    height: 75vh;
+    justify-content: space-between;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,13 +92,15 @@
     display: flex;
     flex-direction: column;
     width: 95.7vw;
-    height: 60.7vh;
+    height: 50.7vh;
     align-items: center;
     justify-content: space-between;
 }
-
+th{
+    font-weight: 500;
+}
 #tabela table {
-    width: 80%;
+    width: 86%;
     border-collapse: collapse; 
 }
 
@@ -106,6 +110,12 @@
 
 #tabela th, #tabela td {    padding: 8px;
     text-align: left;
+    div{
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        border-radius: 4px;
+    }
 }
 
 #tabela tbody td:nth-last-child(1) {

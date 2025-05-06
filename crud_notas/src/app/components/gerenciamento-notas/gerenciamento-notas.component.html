@@ -9,8 +9,8 @@
       <input type="text" placeholder="Busque por nome" [(ngModel)]="nome_entrada">
     </div>
     <div id="botoes">
-      <button type="submit" (click)="pesquisar()"><img src="">pesquisar</button>
-    <button><img src="assets/Share.svg" alt="">cadastrar alunos</button>
+      <button type="submit" (click)="pesquisar()"><img src="">Pesquisar</button>
+    <button routerLink="/cadastro-aluno"><img src="assets/Share.svg" >Cadastrar alunos</button>
     </div>
   </div>
 <div id="tabela">
@@ -39,9 +39,17 @@
             <td>{{ item.linguagens }}</td>
             <td>{{ item.ciencias }}</td>
             <td>{{ item.media }}</td>
-            <td *ngIf="item.media >= 7; else Reprovado" style="color: rgb(2, 146, 0); background-color: lightgreen;">Aprovado</td>
+            <td *ngIf="item.media >= 7; else Reprovado">
+              <div style="color: rgb(2, 146, 0); background-color: lightgreen;">
+                Aprovado
+              </div>
+            </td>
             <ng-template #Reprovado>
-                <td style="color:  red; background-color: lightsalmon;">Reprovado</td>
+                <td >
+                  <div style="color:  red; background-color: lightsalmon;">
+                    Reprovado
+                  </div>
+                </td>
             </ng-template>
             <td>&#8942;
             </td>
