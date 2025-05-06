@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     margin: 3% 7%;
-    max-width: 500px;
+    width: 40vw;
 }
 
 #texto_cadastro {
@@ -26,8 +26,8 @@
 }
 
 .input {
-    width: 90%;
-    height: 42px;
+    width: 70%;
+    height: 12%;
     padding: 8px;
     border: 1px solid #a7a7a7;
     border-radius: 6px;
@@ -36,8 +36,9 @@
 
 #inputs {
     display: flex;
+    height: 50vh;
     flex-direction: column;
-    gap: 16px
+    justify-content: space-around;
 }
 
 
@@ -51,13 +52,14 @@
 }
 
 #botoes {
+    height: 75vh;
+    flex-direction: column;
     display: flex;
     justify-content: flex-end;
-    margin-top: 2%;
-    margin-right: 6%;
 }
 
 #botao {
+
     height: 45px;
     font-size: 16px;
     display: flex;
@@ -70,6 +72,10 @@
     padding: 10px 20px;
     cursor: pointer;
     transition:  0.2s ease-in-out;
+    button{
+        display: flex;
+        align-self: center;
+    }
 }
 
 #botao:hover {
@@ -78,4 +84,10 @@
 
 .icon {
     width: 16px;
+}
+#corpo{
+    display: flex;
+    justify-content: space-between;
+    width: 98vw;
+    height: 80vh;
 }
