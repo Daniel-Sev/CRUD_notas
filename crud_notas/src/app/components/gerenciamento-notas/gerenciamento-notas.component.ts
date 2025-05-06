@@ -5,10 +5,11 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { retry } from 'rxjs';
 import { CaminhoComponent } from '../caminho/caminho.component';
 import {FormsModule} from '@angular/forms'
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-gerenciamento-notas',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, SidebarComponent, CaminhoComponent, FormsModule],
+  imports: [CommonModule, NavbarComponent, SidebarComponent, CaminhoComponent, FormsModule, RouterModule],
   templateUrl: './gerenciamento-notas.component.html',
   styleUrls: ['./gerenciamento-notas.component.css']
 })
@@ -149,6 +150,16 @@ export class GerenciamentoNotasComponent {
       linguagens: 8,
       ciencias: 7,
       media: 7.3
+    },
+    {
+      nome: "Thiago",
+      email: "thiago@gmail.com",
+      ano: 2,
+      serie: "F",
+      exatas: 7,
+      linguagens: 8,
+      ciencias: 7,
+      media: 7.3
     }
   ];
   itens_listados: any[] = [];
@@ -198,17 +209,18 @@ export class GerenciamentoNotasComponent {
     this.atualizarItensListados()
   }
   nome_entrada :string = ""
+  
   pesquisar(){
-    
+    this.itens_listados = []
+    const regex = new RegExp(this.nome_entrada, 'i');
+    if(this.nome_entrada == null){
+      this.pagina_atual= 1;
+    }
     for(let i of this.itens){
-      if(this.nome_entrada == i.nome.toString()){
-          console.log("Deu certo!")
-          this.itens_listados = [
-            i
-          ]
-          break;
+      const nomeItemSemEspacos = i.nome.replace(/\s+/g, '');
+      if(regex.test(i.nome)){
+          this.itens_listados.push(i)
       }
     }
   }
-
 }
