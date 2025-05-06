@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
+
 export class LoginComponent {
   constructor(public dialog: MatDialog) {}
 
