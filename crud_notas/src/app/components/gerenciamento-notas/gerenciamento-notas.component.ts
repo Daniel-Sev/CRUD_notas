@@ -1,3 +1,4 @@
+import { ToastService } from './../toast.service';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -7,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { PopUpLoginComponent } from '../pop-up-login/pop-up-login.component';
+import { PopUpEscolhasComponent } from '../pop-up-escolhas/pop-up-escolhas.component';
+import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-gerenciamento-notas',
@@ -178,15 +181,16 @@ export class GerenciamentoNotasComponent {
   nome_entrada: string = "";
 
 
-  constructor(private dialog: MatDialog) { 
+  constructor(private dialog: MatDialog, public toastService: ToastService) { 
     this.atualizarItensListados();
     this.total_pagina = this.calcularPaginas();
+
   }
 
   errorDialog(): void {
-    this.dialog.open(PopUpLoginComponent, {
-      width: '600px',
-      height: '430px',
+    this.dialog.open(PopUpEscolhasComponent, {
+      width: '129px',
+      height: '190px',
     });
   }
 
