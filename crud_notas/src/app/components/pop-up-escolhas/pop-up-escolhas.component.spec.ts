@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopUpEditarComponent } from './pop-up-editar.component';
+import { PopUpEscolhasComponent } from './pop-up-escolhas.component';
 
-describe('PopUpEditarComponent', () => {
-  let component: PopUpEditarComponent;
-  let fixture: ComponentFixture<PopUpEditarComponent>;
+describe('PopUpEscolhasComponent', () => {
+  let component: PopUpEscolhasComponent;
+  let fixture: ComponentFixture<PopUpEscolhasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PopUpEditarComponent]
+      imports: [PopUpEscolhasComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PopUpEditarComponent);
+    fixture = TestBed.createComponent(PopUpEscolhasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

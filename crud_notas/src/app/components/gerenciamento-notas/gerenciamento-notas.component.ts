@@ -1,21 +1,34 @@
+import { ToastService } from './../toast.service';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { retry } from 'rxjs';
 import { CaminhoComponent } from '../caminho/caminho.component';
-import {FormsModule} from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { PopUpLoginComponent } from '../pop-up-login/pop-up-login.component';
+import { PopUpEscolhasComponent } from '../pop-up-escolhas/pop-up-escolhas.component';
+import { Route } from '@angular/router';
+
 @Component({
   selector: 'app-gerenciamento-notas',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, SidebarComponent, CaminhoComponent, FormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    NavbarComponent,
+    SidebarComponent,
+    CaminhoComponent,
+    FormsModule,
+    RouterModule,
+    MatDialogModule, 
+  ],
   templateUrl: './gerenciamento-notas.component.html',
   styleUrls: ['./gerenciamento-notas.component.css']
 })
-
 export class GerenciamentoNotasComponent {
-  
+
+  editarValido: boolean = true;
   pagina_atual: number = 1;
   itens_pagina: number = 5;
   
@@ -162,53 +175,65 @@ export class GerenciamentoNotasComponent {
       media: 7.3
     }
   ];
-  itens_listados: any[] = [];
-  total_pagina: any[] = []
 
-  constructor() {
+  itens_listados: any[] = [];
+  total_pagina: any[] = [];
+  nome_entrada: string = "";
+
+
+  constructor(private dialog: MatDialog, public toastService: ToastService) { 
     this.atualizarItensListados();
-    this.total_pagina = this.calcularPaginas()
+    this.total_pagina = this.calcularPaginas();
+
   }
-  
-  calcularPaginas(){
-    let total_pagina: any[] = []
-    for (let index = 0; index < Math.ceil(this.itens.length/this.itens_pagina); index++) {
-     total_pagina.push(index+1)
+
+  errorDialog(): void {
+    this.dialog.open(PopUpEscolhasComponent, {
+      width: '129px',
+      height: '190px',
+    });
+  }
+
+  registrado(): void {
+    if (this.editarValido) {
+      this.errorDialog();
     }
-    return total_pagina
   }
-  
- 
+
+  calcularPaginas() {
+    const total_paginas = Math.ceil(this.itens.length / this.itens_pagina);
+    return Array.from({ length: total_paginas }, (_, i) => i + 1);
+  }
 
   atualizarItensListados() {
-    const indice_inicio = (this.pagina_atual - 1) * this.itens_pagina;
-    const indice_fim = indice_inicio + this.itens_pagina;
-    this.itens_listados = this.itens.slice(indice_inicio, indice_fim);
+    const inicio = (this.pagina_atual - 1) * this.itens_pagina;
+    const fim = inicio + this.itens_pagina;
+    this.itens_listados = this.itens.slice(inicio, fim);
   }
 
   paginaAnterior() {
     if (this.pagina_atual > 1) {
-      this.pagina_atual-=1;
-      this.atualizarItensListados();
-    }else{
-      this.navegarPara(this.total_pagina.length)
+      this.pagina_atual--;
+    } else {
+      this.pagina_atual = this.total_pagina.length;
     }
+    this.atualizarItensListados();
   }
 
   proximaPagina() {
     if ((this.pagina_atual * this.itens_pagina) < this.itens.length) {
       this.pagina_atual++;
-      this.atualizarItensListados();
-    }else{
-      this.navegarPara(1)
+    } else {
+      this.pagina_atual = 1;
     }
+    this.atualizarItensListados();
   }
-  navegarPara(pagina: number){
-    this.pagina_atual = pagina
-    console.log("Deu certo")
-    this.atualizarItensListados()
+
+  navegarPara(pagina: number) {
+    this.pagina_atual = pagina;
+    this.atualizarItensListados();
   }
-  nome_entrada :string = ""
+
   
   pesquisar(){
     this.itens_listados = []

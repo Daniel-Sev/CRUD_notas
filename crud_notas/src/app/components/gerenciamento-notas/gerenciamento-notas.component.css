@@ -120,6 +120,7 @@ th{
 
 #tabela tbody td:nth-last-child(1) {
     text-align: center;
+    
 }
 
 #tabela div {
@@ -146,3 +147,61 @@ th{
     width: 2%;
     border-radius: 4px;
 }
+
+#botao_tres_pontos {
+    border: none;
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+
+ }
+
+#botao_tres_pontos:nth-child(n):hover{
+    transform: scale(2);
+    filter: brightness(0) saturate(100%) invert(61%) sepia(64%) saturate(497%) hue-rotate(88deg) brightness(92%) contrast(93%);
+}
+
+/* Estilo do toast */
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    z-index: 1000;
+    animation: fadeIn 0.4s, fadeOut 0.4s 3s;
+    max-width: 90%;
+    min-width: 200px;
+    touch-action: manipulation;
+  }
+  
+  /* Ícone à esquerda */
+  .toast .icon {
+    background-color: #4CAF50; /* cor verde */
+    color: white;
+    border-radius: 50%;
+    padding: 0.4rem;
+    font-size: 1rem;
+    margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Animações */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, 20px); }
+    to   { opacity: 1; transform: translate(-50%, 0); }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translate(-50%, 0); }
+    to   { opacity: 0; transform: translate(-50%, 20px); }
+  }
+  
